@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anna Kissajikian</title>
+<meta name="description" content="Anna Kissajikian — Business Management &amp; French at King's College London. Experience in debt capital markets, investment banking and commercial banking." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F2EE;
+    --ink:#1E2A26;
+    --body:#3A423E;
+    --muted:#6E736F;
+    --accent:#7C2D3C;
+    --line:#D9D7CF;
+    --sand:#E9E5DD;
+    --gutter:clamp(1.25rem,5vw,4rem);
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"Manrope",system-ui,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition-duration:.001ms!important;animation-duration:.001ms!important;}
+  }
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:1rem;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  .wrap{max-width:70rem;margin:0 auto;padding:0 var(--gutter);}
+
+  /* ---------- top bar ---------- */
+  .bar{
+    position:sticky;top:0;z-index:20;
+    background:rgba(243,242,238,.88);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar__in{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;padding:.9rem 0;
+  }
+  .bar__name{
+    font-family:var(--serif);font-weight:600;font-size:1.25rem;
+    letter-spacing:.01em;text-decoration:none;
+  }
+  .bar nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.4rem;}
+  .bar nav a{
+    text-decoration:none;font-size:.875rem;font-weight:500;color:var(--muted);
+    transition:color .18s ease;
+  }
+  .bar nav a:hover,.bar nav a[aria-current="true"]{color:var(--accent);}
+  @media (max-width:40rem){
+    .bar nav li:nth-child(n+4){display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(3rem,9vh,7rem) 0 clamp(3rem,8vh,5rem);}
+  .hero__grid{display:grid;gap:2.5rem;align-items:end;}
+  @media (min-width:52rem){
+    .hero__grid{grid-template-columns:minmax(0,1fr) minmax(16rem,22rem);gap:clamp(2.5rem,6vw,5rem);}
+  }
+  .portrait{
+    margin:0;width:min(100%,20rem);aspect-ratio:4/5;overflow:hidden;
+    border-radius:2px;background:var(--sand);
+    box-shadow:0 1px 0 var(--line), 0 24px 48px -28px rgba(30,42,38,.45);
+  }
+  @media (min-width:52rem){.portrait{width:100%;justify-self:end;}}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
+  .hero h1{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:clamp(3.4rem,10vw,7rem);line-height:.95;letter-spacing:-.015em;
+    margin:0 0 1.75rem;
+  }
+  .hero p{
+    font-size:clamp(1.125rem,2.2vw,1.375rem);line-height:1.5;
+    max-width:42ch;margin:0;color:var(--body);font-weight:400;
+  }
+
+  /* the route */
+  .route{
+    list-style:none;margin:clamp(2.5rem,6vh,4rem) 0 0;padding:0;
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 0;
+    font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:500;
+    color:var(--ink);
+  }
+  .route li{display:flex;align-items:center;}
+  .route li + li::before{
+    content:"";display:block;width:2.25rem;height:1px;background:var(--accent);
+    margin:0 .9rem;flex:none;
+  }
+  .route small{
+    display:block;font-family:var(--sans);font-size:.75rem;font-weight:500;
+    color:var(--muted);margin-top:.1rem;letter-spacing:.02em;
+  }
+  .route span{display:block;}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(3rem,8vh,5rem) 0;border-top:1px solid var(--line);}
+  .sec__head{
+    display:grid;gap:.5rem 3rem;margin-bottom:2.25rem;
+  }
+  @media (min-width:48rem){.sec__head{grid-template-columns:11rem 1fr;}}
+  .sec__head h2{
+    font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1.1;
+    margin:0;letter-spacing:-.01em;
+  }
+  .sec__head p{margin:0;color:var(--muted);max-width:52ch;font-size:.9375rem;align-self:end;}
+
+  .entry{
+    display:grid;gap:.4rem 3rem;padding:1.6rem 0;border-top:1px solid var(--line);
+  }
+  .entry:first-of-type{border-top:0;padding-top:0;}
+  @media (min-width:48rem){.entry{grid-template-columns:11rem minmax(0,1fr);}}
+  .entry__when{font-size:.875rem;color:var(--muted);padding-top:.35rem;line-height:1.5;}
+  .entry__when span{display:block;}
+  .entry__org{
+    font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.15;
+    margin:0;letter-spacing:-.005em;
+  }
+  .entry__role{margin:.15rem 0 .7rem;font-size:.9375rem;color:var(--accent);font-weight:500;}
+  .entry ul{margin:0;padding-left:1.1rem;color:var(--body);max-width:60ch;}
+  .entry li{margin:.3rem 0;}
+  .entry li::marker{color:var(--accent);}
+  .entry p{margin:0;color:var(--body);max-width:60ch;}
+
+  .marks{
+    list-style:none;margin:.9rem 0 0;padding:0;
+    display:grid;gap:.15rem 2rem;max-width:34rem;font-size:.875rem;
+  }
+  @media (min-width:40rem){.marks{grid-template-columns:1fr 1fr;}}
+  .marks li{display:flex;justify-content:space-between;gap:1rem;color:var(--body);padding:.25rem 0;border-bottom:1px dotted var(--line);}
+  .marks li b{font-weight:600;color:var(--ink);font-family:var(--serif);font-size:1.05rem;}
+  .marks-note{margin:.4rem 0 0;font-size:.8125rem;color:var(--muted);}
+
+  /* facts grid */
+  .facts{display:grid;gap:2rem 3rem;}
+  @media (min-width:48rem){.facts{grid-template-columns:repeat(2,1fr);}}
+  .facts h3{
+    font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:0 0 .6rem;
+  }
+  .facts ul{list-style:none;margin:0;padding:0;color:var(--body);font-size:.9375rem;}
+  .facts li{padding:.3rem 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;}
+  .facts li:first-child{border-top:0;padding-top:0;}
+  .facts li em{font-style:normal;color:var(--muted);font-size:.8125rem;white-space:nowrap;}
+  .facts p{margin:0;color:var(--body);font-size:.9375rem;}
+
+  /* contact */
+  .contact{display:grid;gap:1.5rem 3rem;}
+  @media (min-width:48rem){.contact{grid-template-columns:11rem 1fr;}}
+  .contact__big{
+    font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,5vw,3rem);
+    line-height:1.1;margin:0 0 1.5rem;max-width:20ch;letter-spacing:-.01em;
+  }
+  .contact__big a{
+    color:var(--accent);text-decoration:none;font-style:italic;
+    border-bottom:1px solid var(--accent);
+  }
+  .links{display:flex;flex-wrap:wrap;gap:.6rem 1.75rem;font-size:.9375rem;}
+  .links a{
+    text-decoration:none;color:var(--ink);font-weight:500;
+    border-bottom:1px solid var(--line);padding-bottom:2px;
+    transition:border-color .18s ease,color .18s ease;
+  }
+  .links a:hover{color:var(--accent);border-color:var(--accent);}
+
+  footer{
+    padding:2.5rem 0 3rem;border-top:1px solid var(--line);
+    font-size:.8125rem;color:var(--muted);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  }
+  footer span{font-family:var(--serif);font-size:1rem;font-style:italic;}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="bar__name" href="#top">Anna Kissajikian</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="hero">
+    <div class="hero__grid">
+      <div>
+        <h1>Anna Kissajikian</h1>
+        <p>Final-year Business Management &amp; French student at King's College London, with experience across debt capital markets, investment banking, commercial banking and real estate development. Brazilian by nationality, Armenian by heritage, and most recently a summer of AI and programming at Stanford.</p>
+      </div>
+      <figure class="portrait">
+        <img src="portrait.jpg" alt="Anna Kissajikian" width="1127" height="1396">
+      </figure>
+    </div>
+
+    <ol class="route" aria-label="Where I've studied and worked">
+      <li><span>São Paulo<small>Home</small></span></li>
+      <li><span>London<small>King's College</small></span></li>
+      <li><span>Paris<small>ESSEC</small></span></li>
+      <li><span>Singapore<small>Bank of China</small></span></li>
+      <li><span>Palo Alto<small>Stanford</small></span></li>
+    </ol>
+  </div>
+
+  <section id="experience">
+    <div class="sec__head">
+      <h2>Experience</h2>
+      <p>Three internships across three sides of banking, on two continents.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>May – Jul 2025</span><span>Singapore</span></div>
+      <div>
+        <h3 class="entry__org">Bank of China</h3>
+        <p class="entry__role">Debt Capital Markets &amp; Treasury intern</p>
+        <ul>
+          <li>Supported DCM and Treasury desks serving international clients, collecting daily market information to inform trading decisions.</li>
+          <li>Prepared client-facing materials and investor product presentations for UK-based clients.</li>
+          <li>Led the redevelopment of the Singapore branch's DCM pitchbooks and internal documents from Mandarin into English.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>Aug – Sep 2024</span><span>São Paulo</span></div>
+      <div>
+        <h3 class="entry__org">Induscred Bank</h3>
+        <p class="entry__role">Investment Banking intern</p>
+        <ul>
+          <li>Shadowed M&amp;A analyses of two mid-cap companies and followed the sale of a company to a competitor within the group.</li>
+          <li>Contributed to financial models and due diligence materials supporting the M&amp;A process.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>May – Jun 2024</span><span>São Paulo</span></div>
+      <div>
+        <h3 class="entry__org">Sofisa Bank</h3>
+        <p class="entry__role">Commercial Banking intern</p>
+        <ul>
+          <li>Rotated through every business division of the bank.</li>
+          <li>Wrote an analytical report on each division and designed the structure of the intern programme; both presented to the CEO.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>Jan 2022 – May 2024</span><span>São Paulo</span></div>
+      <div>
+        <h3 class="entry__org">AK Realty Group</h3>
+        <p class="entry__role">Real Estate Development, shadowing apprentice</p>
+        <ul>
+          <li>Followed two projects from inception to launch: a 40-storey multi-family development and a commercial-to-hotel conversion.</li>
+          <li>Conducted venture analyses, market research and site visits under the guidance of the department head.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec__head">
+      <h2>Education</h2>
+      <p>A business degree taught partly in French, with a detour into computer science.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>2023 – 2027</span><span>London</span></div>
+      <div>
+        <h3 class="entry__org">King's College London</h3>
+        <p class="entry__role">BBA Joint Honours, Business Management &amp; French</p>
+        <ul>
+          <li>Final-year student, on track for Upper-Second Class Honours.</li>
+          <li>Selected for the King's Consulting Project, working directly with a company on live business challenges.</li>
+          <li>Junior Associate, KCL Humanities Careers Network; member of Women in Business and several finance and entrepreneurship societies.</li>
+        </ul>
+        <ul class="marks" aria-label="First-year marks">
+          <li>Principles of Economics <b>79</b></li>
+          <li>Intermediate French <b>77</b></li>
+          <li>Principles of Marketing <b>73</b></li>
+          <li>Cultural Transformations <b>72</b></li>
+        </ul>
+        <p class="marks-note">First-year marks, out of 100.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>Summer 2026</span><span>Palo Alto</span></div>
+      <div>
+        <h3 class="entry__org">Stanford University</h3>
+        <p class="entry__role">Visiting student — AI, Programming &amp; Technology</p>
+        <ul class="marks" aria-label="Stanford results">
+          <li>Exploring AI <b>A</b></li>
+          <li>Introduction to HPC-AI <b>A</b></li>
+          <li>Programming Methodology (Python) <b>Certificate</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>2025 – 2026</span><span>Paris</span></div>
+      <div>
+        <h3 class="entry__org">ESSEC Business School</h3>
+        <p class="entry__role">Year abroad, taught in French</p>
+        <ul>
+          <li>Selected by King's for the exchange; completed Advanced French, Business French and SimTrade trading certificates.</li>
+        </ul>
+        <ul class="marks" aria-label="Selected ESSEC marks">
+          <li>Innovation &amp; Design Thinking <b>18</b></li>
+          <li>Comportement du consommateur <b>16</b></li>
+          <li>Marketing du sport <b>16</b></li>
+          <li>Industries culturelles <b>16</b></li>
+          <li>Négociation internationale <b>15</b></li>
+          <li>SimTrade <b>15</b></li>
+        </ul>
+        <p class="marks-note">Selected marks, out of 20.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>2007 – 2023</span><span>São Paulo</span></div>
+      <div>
+        <h3 class="entry__org">St. Paul's British School</h3>
+        <p class="entry__role">IB Diploma</p>
+        <ul>
+          <li>Higher Level Business Management, Economics and English; IGCSE A* in Physics and French.</li>
+          <li>Led the Model United Nations club and served as COO of the YOUMUN conference, bringing the Chief Justice of Brazil's Supreme Federal Court as keynote speaker.</li>
+          <li>School Ambassador, 2015–2023.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="sec__head">
+      <h2>Community</h2>
+      <p>Commitments that predate any internship, and outlast them.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>2015 – present</span><span>São Paulo</span></div>
+      <div>
+        <h3 class="entry__org">Armenian Church Youth Organization</h3>
+        <p class="entry__role">Chairperson</p>
+        <ul>
+          <li>Spokesperson for the 100th Genocide Remembrance commemoration.</li>
+          <li>Created a volunteer programme for the Armenian retirement home during the pandemic.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__when"><span>2021 – present</span></div>
+      <div>
+        <h3 class="entry__org">Ação Jovens Indígenas</h3>
+        <p class="entry__role">Youth Representative</p>
+        <ul>
+          <li>Promotes non-formal education for Brazilian Indigenous youth through fundraising.</li>
+          <li>Organised an online conversation between tribe elders and more than 150 students.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec__head">
+      <h2>About</h2>
+    </div>
+    <div class="facts">
+      <div>
+        <h3>Languages</h3>
+        <ul>
+          <li>Portuguese <em>native</em></li>
+          <li>English <em>fluent</em></li>
+          <li>French <em>advanced</em></li>
+          <li>Spanish <em>intermediate, conversational</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Further courses</h3>
+        <ul>
+          <li>Real Estate &amp; Economics <em>LSE</em></li>
+          <li>Young Investment Banker Programme <em>InvestIN</em></li>
+          <li>Accounting &amp; Economics <em>Outliers</em></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Background</h3>
+        <p>Born and raised in São Paulo to a family of Armenian descent. Based in London, and comfortable moving between Portuguese, English and French in the same day.</p>
+      </div>
+      <div>
+        <h3>Away from the desk</h3>
+        <p>Piano and harp. Yoga most mornings, volleyball and tennis when there's a court.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div class="sec__head" style="margin:0"><h2>Contact</h2></div>
+      <div>
+        <p class="contact__big">Graduating in 2027 and open to conversations in finance, real estate and strategy. <a href="mailto:annakissajikian@gmail.com">Write to me</a>.</p>
+        <div class="links">
+          <a href="mailto:annakissajikian@gmail.com">annakissajikian@gmail.com</a>
+          <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+          <a href="Anna_Kissajikian_CV.pdf">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Anna Kissajikian</span>
+    <div>London · <span id="year">2026</span></div>
+  </footer>
+
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var links = Array.prototype.slice.call(document.querySelectorAll('.bar nav a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.removeAttribute('aria-current'); });
+          var i = sections.indexOf(e.target);
+          if (i > -1) links[i].setAttribute('aria-current','true');
+        }
+      });
+    }, { rootMargin:'-35% 0px -55% 0px' });
+    sections.forEach(function(s){ if (s) obs.observe(s); });
+  }
+</script>
+</body>
+</html>
